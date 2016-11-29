@@ -1,0 +1,63 @@
+@CHARSET "UTF-8";
+
+a, a:hover, a:visited { 
+	text-decoration:none; 
+}
+
+ul li { 
+	list-style : none;
+	margin : 0;
+	padding : 0;
+}
+
+p {
+	font-size : 14px;
+}
+
+#login {
+	display : block;
+	position : absolute;
+	right : 30px;
+	top : 0;
+}
+
+#wrap{
+	position:relative; 
+	width:100%;
+	margin-bottom : 18.720px;
+}
+   
+#main_bn {
+    margin:0 auto;
+    width:850px;
+    height:420px;
+}
+    
+#main_bn img {
+    width:100%;
+    height:auto;
+}
+
+#main_bn_btn {
+    list-style-type:none;
+    position:absolute;
+    bottom:15px; 
+    left:50%;
+    margin-left : -80px;   	
+}
+
+#main_bn_btn li {
+    float: left; 
+    padding:0px 2px; 
+    margin-right:5px; 
+}
+
+
+
+table {
+	text-align : center;
+	BORDER-COLLAPSE: collapse;
+	border : 1px solid #000;
+	width : 850px;
+	
+}
