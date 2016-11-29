@@ -6,10 +6,10 @@
  <style type="text/css">/* 스타일 시트 */
 
 	body {
-       font-size : 13px; 
+       font-size : 15px; 
 	   font-family:"돋움";
 	}
-	#sel_size {width:300px; height:15px;  padding-left:50%;}
+	#sel_size {width:300px; height:25px;  padding-left:50%;}
 	/* ID = write_title (가로 100%, 세로 35px, 세로 높이지정 : 30px, 테두리 둥글게 5px, 테두리굵기 [2px 기본 선 색상지정] */
 	#write_title{width:100%; height:30px; margin-top:7px; padding-top:10px; border-radius:5px; border:2px solid #009688;}
 </style>
@@ -33,11 +33,11 @@
    <tr height="5"><td width="5"></td></tr>
    <tr align="center"> 
    <td width="5"> </td>
-   <td width="63">번호</td>
-   <td width="360">제목</td>
+   <td width="40">번호</td>
+   <td width="320">제목</td>
    <td width="73">작성자</td>
    <td width="164">작성일</td>
-   <td width="58">조회수</td>
+   <td width="60">조회수</td>
    <td width="7"></td>
   </tr>
   <tr height="25" align="center"></tr>
