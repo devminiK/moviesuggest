@@ -14,7 +14,6 @@
  * @copyright (c) 2010 Kotelnitskiy Evgeniy (http://4coder.info/en/)
  * @example Visit http://4coder.info/en/jquery-ulslide-2/ for more informations about this jQuery plugin
  */
-
 ulslide_last_id = 0;
 (function($) {
     jQuery.fn.ulslide = function(settings) {

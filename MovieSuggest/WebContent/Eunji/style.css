@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
 a, a:hover, a:visited { 
-	text-decoration:none; 
+	text-decoration:none !important;
 }
 
 ul li { 
@@ -39,7 +39,7 @@ p {
 }
 
 #main_bn_btn {
-    list-style-type:none;
+    list-style-type:none !important;
     position:absolute;
     bottom:15px; 
     left:50%;
@@ -51,13 +51,47 @@ p {
     padding:0px 2px; 
     margin-right:5px; 
 }
-
+ 
+ 
+ 
+ 
 
 
 table {
 	text-align : center;
 	BORDER-COLLAPSE: collapse;
-	border : 1px solid #000;
-	width : 850px;
+	border : 1px solid #4a4a4b;
+}
+
+#join_table {
+	text-align : center;
+	BORDER-COLLAPSE: collapse;
 	
 }
+
+tr {
+	margin : 15px 0;
+	border-bottom : 1px solid #e3e3e3;
+}
+
+#join_col {
+	width : 150px;
+	border-right : 1px solid #4a4a4b;
+	padding : 15px 0;
+}
+
+input {
+	height : 23px;
+	margin : 0 15px;
+}
+
+button {
+	width:200px; 
+	height:35px; 
+	margin:25px 0 0 0; 
+	background: #ededed; 
+	border:1px solid #4a4a4b;
+}
+
+
+
