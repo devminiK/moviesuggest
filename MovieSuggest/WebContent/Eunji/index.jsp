@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<% request.setCharacterEncoding("utf-8"); %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title> MovieSuggest </title>
-
-<link rel="stylesheet" type="text/css" href="./style.css" />
 
 <style type="text/css">
 	@import url(style.css);	
@@ -27,17 +28,13 @@
                 });
             });
 </script>
-
 </head>
-<body style="margin-top : 50px;">
 
-	<h2 align="center"> Movie Suggestion </h2>
+<body>
+
+<%@ include file="header.jsp" %>
 	
-	<div id="login">
-		<p> 로그인 </p>
-	</div>
-	
-	<div id="wrap">
+<div id="wrap">
     	<div id="main_bn">
     		<li>
     			<img src="../img/picture1.jpg" alt="" />

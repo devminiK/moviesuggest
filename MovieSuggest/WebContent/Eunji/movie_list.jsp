@@ -8,10 +8,14 @@
 
 <style type="text/css">
 	@import url(style.css);
+	body {
+		padding : 0px;
+		margin : 0px;
+	}
 	
 	img {
-		width : 150px;
-		height : 200px;
+		width : 95%;
+		height : 300px;
 	}
 
 	div {
@@ -23,59 +27,67 @@
 </head>
 <body>
 
+
 <ul>
 	<li>
-		<div style=" height:300px; float:left; width:25%;">
+		<div style=" height:400px; float:left; width:25%;">
 			<p> No.1 </p>
 			<img id="list_img" src="../img/picture1.jpg"/>
+			<p> 제목제목 </p>
 		</div>
 	</li>
 	<li>
-		<div style=" height:300px; float:left; width:25%;">
+		<div style=" height:400px; float:left; width:25%;">
 			<p> No.2 </p>
 			<img id="list_img" src="../img/picture1.jpg"/>
+			<p> 제목제목 </p>
 		</div>
 	</li>
 	<li>
-		<div style=" height:300px; float:left; width:25%;">
+		<div style=" height:400px; float:left; width:25%;">
 			<p> No.3 </p>
 			<img id="list_img" src="../img/picture1.jpg"/>
+			<p> 제목제목 </p>
 		</div>
 	</li>
 	<li>
-		<div style=" height:300px; float:left; width:25%;">
+		<div style=" height:400px; float:left; width:25%;">
 			<p> No.4 </p>
 			<img id="list_img" src="../img/picture1.jpg"/>
+			<p> 제목제목 </p>
 		</div>
 	</li>
 </ul>
-
 <ul>
 	<li>
-		<div style=" height:300px; float:left; width:25%;">
+		<div style=" height:400px; float:left; width:25%;">
 			<p> No.5 </p>
 			<img id="list_img" src="../img/picture1.jpg"/>
+			<p> 제목제목 </p>
 		</div>
 	</li>
 	<li>
-		<div style=" height:300px; float:left; width:25%;">
+		<div style=" height:400px; float:left; width:25%;">
 			<p> No.6 </p>
 			<img id="list_img" src="../img/picture1.jpg"/>
+			<p> 제목제목 </p>
 		</div>
 	</li>
 	<li>
-		<div style=" height:300px; float:left; width:25%;">
+		<div style=" height:400px; float:left; width:25%;">
 			<p> No.7 </p>
 			<img id="list_img" src="../img/picture1.jpg"/>
+			<p> 제목제목 </p>
 		</div>
 	</li>
 	<li>
-		<div style=" height:300px; float:left; width:25%;">
+		<div style=" height:400px; float:left; width:25%;">
 			<p> No.8 </p>
 			<img id="list_img" src="../img/picture1.jpg"/>
+			<p> 제목제목 </p>
+	
 		</div>
 	</li>
 </ul>
-
 </body>
 </html>
