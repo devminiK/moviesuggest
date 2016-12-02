@@ -1,10 +1,14 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<% request.setCharacterEncoding("utf-8"); %>
+
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Moviesuggest</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
-
 </head>
 <body>
 
@@ -12,7 +16,9 @@
 <h3> 회원가입 </h3>
 
 <div>
-<form action="join.jsp" name="join">
+<form action="join_control.jsp" name="join" method="post">
+<input type=hidden name="action" value="insert">
+
 <table id="join_table">
 	<tr>
 		<td id="join_col"> 이름 </td>
