@@ -70,11 +70,12 @@ function writeCheck(){
       <tr>
        <td>&nbsp;</td>
        <td align="center">평점 </td>
-       <td><input type="checkbox" name="score1" value="1"/>1</td>
-       <td><input type="checkbox" name="score2" value="2"/>2</td>
-       <td><input type="checkbox" name="score3" value="3"/>3</td>
-       <td><input type="checkbox" name="score4" value="4"/>4</td>
-       <td><input type="checkbox" name="score5" value="5"/>5</td>
+       <td><input type="radio" name="thingscore" value="1"/>1</td>
+       <td><input type="radio" name="thingscore" value="2"/>2</td>
+       <td><input type="radio" name="thingscore" value="3"/>3</td>
+       <td><input type="radio" name="thingscore" value="4"/>4</td>
+       <td><input type="radio" name="thingscore" value="5"/>5</td>
+       
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan=""></td></tr>
       </table>
@@ -93,20 +94,7 @@ function writeCheck(){
        <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>
-     <tr>
-       <td>&nbsp;</td>
-       <td align="center">사용자 이름</td>
-       <td><input name="name" size="50" maxlength="50"></td>
-       <td>&nbsp;</td>
-     </tr>
-	 <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>
-	 <tr>
-       <td>&nbsp;</td>
-       <td align="center">비밀번호</td>
-       <td><input type="password" name="password" size="50" maxlength="8"></td>
-       <td>&nbsp;</td>
-     </tr>
-     <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>
+     
      <tr>
        <td>&nbsp;</td>
        <td align="center">내용</td>
