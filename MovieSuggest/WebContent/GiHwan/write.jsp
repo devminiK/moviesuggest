@@ -89,7 +89,7 @@ function writeCheck(){
      <tr>
        <td>&nbsp;</td>
        <td align="center">장르</td>
-       <td><input name="part" size="50" maxlength="50"></td>
+       <td><input name="ganre" size="50" maxlength="50"></td>
        <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>

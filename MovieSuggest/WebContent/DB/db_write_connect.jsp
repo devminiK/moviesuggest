@@ -24,13 +24,13 @@ try{
 	
 	conn = DriverManager.getConnection(jdbc_url,user,password);
 	
-	String sql = "insert into join_db values(?,?)";
+	String sql = "insert into write_db values(?,?)";
 	pstmt = conn.prepareStatement(sql);
-	pstmt.setString(1, request.getParameter("user_name"));
-	pstmt.setString(2, request.getParameter("user_id"));
-	pstmt.setString(3, request.getParameter("user_password"));
-	pstmt.setString(4, request.getParameter("user_email"));
-	pstmt.setString(5, request.getParameter("user_tel"));
+	pstmt.setString(1, request.getParameter("ganre"));
+	pstmt.setString(2, request.getParameter("title"));
+	pstmt.setString(3, request.getParameter(""));
+	pstmt.setString(4, request.getParameter("memo"));
+	
 	
 	if(request.getParameter("user_id") != null){
 		pstmt.executeUpdate();
