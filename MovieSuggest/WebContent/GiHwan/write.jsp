@@ -84,6 +84,13 @@ function writeCheck(){
        <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>
+     <tr>
+       <td>&nbsp;</td>
+       <td align="center"> 사용자 이름 </td>
+       <td><font color="#757575" style="bold">사용자의 아이디는 이렇습니다.</font></td>
+       <td>&nbsp;</td>
+     </tr>
+     <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>
      
      <tr>
        <td>&nbsp;</td>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
-<%@ page import="java.sql.*" %>
+<%@ page import="java.sql.*,java.text.*,java.util.Date" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
@@ -50,6 +50,7 @@
 		rs = stmt.executeQuery(sqlList);    // DB실행
 
 %>
+<form action = "write.jsp">
  <table align = "center">
  	<tr>
    	  <td>
@@ -76,6 +77,9 @@
 </table>
 <table width="100%" cellpadding="0" cellspacing="0" border="0" id= bodys>
 <%
+	Date d = new Date();				
+	SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy-MM-dd"); 
+	String day = (String)simpleDate.format(d);
 	if(total==0) {		// total 즉, 자료가 없다면
 %>
 	 <tr align="center" bgcolor="#FFFFFF" height="30">
@@ -87,13 +91,13 @@
 			int idx = rs.getInt(1) + 1;	     	// 1은 첫번째 즉 write_num값을 idx라는 변수에 대입
 			String title = rs.getString(2);		// write_title
 			String user = rs.getString(3);		// write_user
-			String date = rs.getString(7);		// write_date
+			
 %>
 	<tr height="25" align="left">
 		<td id="tdpadding" width="40"><%=idx %></td>
 		<td width="320"> <%= title %></td>
-		<td width="73"><%=user %></td>
-		<td width="164"><%=date %></td>
+		<td width="73"><%= user %></td>
+		<td width="164"><%= day %></td>
 		<td width="60">&nbsp;</td>
 	</tr>
 	  <tr height="1" bgcolor="#D2D2D2"><td colspan="6"></td></tr>
@@ -110,11 +114,11 @@
  <tr height="1" bgcolor="#82B5DF"><td colspan="6" width="752"></td></tr>
   <tr>
   <td colspan=5 id=write_btn>
-  <input type="submit" value="글쓰기" OnClick="window.location='write.jsp'" ></td>
+  <input type="submit" value="글쓰기" ><!--OnClick="window.location='write.jsp'"  --> </td>
   </tr>
  </table>
  </div><p>
-
+</form>
 
 
 </body>

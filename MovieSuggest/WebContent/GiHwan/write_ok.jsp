@@ -4,7 +4,7 @@
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	request.setCharacterEncoding("euc-kr"); //받아오는 값들을 한글로 인코딩합니다.
-	java.util.Date date = new java.util.Date();
+	
 	Class.forName("com.mysql.jdbc.Driver");
 	
 	String url = "jdbc:mysql://127.0.0.1:3306/moviesuggest";
@@ -17,19 +17,17 @@
 	int evaluate = Integer.parseInt(request.getParameter("write_evaluate")); 	//평점을 받는다..
 	
 	
-	String today = new SimpleDateFormat("yyyy-MM-dd").format(date);
-	
 	try {	
 		conn = DriverManager.getConnection(url,id,pass);
 		
-		String sql = "INSERT INTO write_db(write_evaluate,write_title,write_ganre,write_reson,wirte_date) VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO write_db(write_evaluate,write_title,write_ganre,write_reson) VALUES(?,?,?,?)";
 		pstmt = conn.prepareStatement(sql);
 		
 		pstmt.setInt(1, evaluate);
 		pstmt.setString(2, title);
 		pstmt.setString(3, ganre);
 		pstmt.setString(4, memo);
-		pstmt.setString(5, today);
+		//stmt.setString(5, year);
 		
 		pstmt.executeUpdate();
 		pstmt.close();
