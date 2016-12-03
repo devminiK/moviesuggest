@@ -19,7 +19,7 @@
 	try {	
 		conn = DriverManager.getConnection(url,id,pass);
 		
-		String sql = "INSERT INTO write_db(movie_title,movie_ganre,sug_reson) VALUES(?,?,?,?)";
+		String sql = "INSERT INTO write_db(write_title,write_ganre,write_reson) VALUES(?,?,?,?)";
 		pstmt = conn.prepareStatement(sql);
 		
 		pstmt.setString(1, name);

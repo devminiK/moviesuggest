@@ -54,17 +54,17 @@ function writeCheck(){
        </tr>
       </table>
       <table>
+      <tr>&nbsp;</tr>
       <tr>
-       <td>&nbsp;</td>
+       <td>&nbsp;&nbsp;&nbsp;</td>
        <td align="center">평점 </td>
        <td><input type="radio" name="write_evaluate" value="1"/>1</td>
        <td><input type="radio" name="write_evaluate" value="2"/>2</td>
        <td><input type="radio" name="write_evaluate" value="3"/>3</td>
        <td><input type="radio" name="write_evaluate" value="4"/>4</td>
-       <td><input type="radio" name="write_evaluate" value="5"/>5</td>
-       
-     </tr>
-     <tr height="1" bgcolor="#dddddd"><td colspan=""></td></tr>
+       <td><input type="radio" name="write_evaluate" value="5"/>5</td> 
+    	</tr>
+     <tr height="1" bgcolor="#dddddd"><td colspan="10"></td></tr>
       </table>
    <table>
      <tr>
