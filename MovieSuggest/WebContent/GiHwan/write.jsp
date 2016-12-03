@@ -32,19 +32,6 @@ function writeCheck(){
     return;
    }
    
-  if( !form.name.value )
-   {
-    alert( "사용자의 이름을 적어주세요" );
-    form.name.focus();
-    return;
-   }
- 
-  if( !form.password.value )
-   {
-    alert( "비밀번호를 적어주세요" );
-    form.password.focus();
-    return;
-   }
   if( !form.memo.value )
   {
    alert( "내용을 적어주세요" );
@@ -70,11 +57,11 @@ function writeCheck(){
       <tr>
        <td>&nbsp;</td>
        <td align="center">평점 </td>
-       <td><input type="radio" name="thingscore" value="1"/>1</td>
-       <td><input type="radio" name="thingscore" value="2"/>2</td>
-       <td><input type="radio" name="thingscore" value="3"/>3</td>
-       <td><input type="radio" name="thingscore" value="4"/>4</td>
-       <td><input type="radio" name="thingscore" value="5"/>5</td>
+       <td><input type="radio" name="write_evaluate" value="1"/>1</td>
+       <td><input type="radio" name="write_evaluate" value="2"/>2</td>
+       <td><input type="radio" name="write_evaluate" value="3"/>3</td>
+       <td><input type="radio" name="write_evaluate" value="4"/>4</td>
+       <td><input type="radio" name="write_evaluate" value="5"/>5</td>
        
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan=""></td></tr>
