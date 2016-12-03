@@ -79,7 +79,8 @@ function writeCheck(){
      <tr>
        <td>&nbsp;</td>
        <td align="center">장르</td>
-       <td><input name="ganre" size="50" maxlength="50"></td>
+       <td> <% String a=request.getParameter("movietype");
+       			out.print(a);%></td>
        <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>
@@ -95,7 +96,7 @@ function writeCheck(){
      <tr align="center">
        <td>&nbsp;</td>
        <td colspan="3">
-         <input type=button value="등록" OnClick="javascript:writeCheck();"> 
+         <input type="submit" value="등록" OnClick="javascript:writeCheck();"> 
          <input type=button value="취소" OnClick="javascript:history.back(-1)">
          <input type=reset value="초기화">
        <td>&nbsp;</td>

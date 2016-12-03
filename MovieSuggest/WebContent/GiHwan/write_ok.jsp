@@ -1,30 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.sql.*" %>
+    pageEncoding="UTF-8" import="java.sql.*, java.text.*" import="java.util.*"%>
 <%
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	request.setCharacterEncoding("euc-kr"); //받아오는 값들을 한글로 인코딩합니다.
-
+	java.util.Date date = new java.util.Date();
 	Class.forName("com.mysql.jdbc.Driver");
 	
 	String url = "jdbc:mysql://127.0.0.1:3306/moviesuggest";
 	String id = "root";
 	String pass = "root";
 
-
-	String name = request.getParameter("title"); //write.jsp에서 name에 입력한 데이터값   , 영화제목
-	String title = request.getParameter("ganre"); //write.jsp에서 title에 입력한 데이터값  , 영화장르
+	String title = request.getParameter("title"); //write.jsp에서 name에 입력한 데이터값   , 영화제목
+	String ganre = request.getParameter("ganre"); //write.jsp에서 title에 입력한 데이터값  , 영화장르
 	String memo = request.getParameter("memo"); //write.jsp에서 memo에 입력한 데이터값 , 내용
+	int evaluate = Integer.parseInt(request.getParameter("write_evaluate")); 	//평점을 받는다..
+	
+	
+	String today = new SimpleDateFormat("yyyy-MM-dd").format(date);
 	
 	try {	
 		conn = DriverManager.getConnection(url,id,pass);
 		
-		String sql = "INSERT INTO write_db(write_title,write_ganre,write_reson) VALUES(?,?,?,?)";
+		String sql = "INSERT INTO write_db(write_evaluate,write_title,write_ganre,write_reson,wirte_date) VALUES(?,?,?,?,?)";
 		pstmt = conn.prepareStatement(sql);
 		
-		pstmt.setString(1, name);
+		pstmt.setInt(1, evaluate);
 		pstmt.setString(2, title);
-		pstmt.setString(3, memo);
+		pstmt.setString(3, ganre);
+		pstmt.setString(4, memo);
+		pstmt.setString(5, today);
 		
 		pstmt.executeUpdate();
 		pstmt.close();
