@@ -12,6 +12,7 @@
 </head>
 <body>
 
+<%@ include file="header.html" %>
 <div align="center">
 <h3> 회원가입 </h3>
 

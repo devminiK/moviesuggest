@@ -62,7 +62,7 @@
 		<table style="width:850px;">
 			<tr>
 				<td><a href="movie_list.jsp"> 한눈에보기 </a></td>
-				<td> 추천게시판 </td>
+				<td><a href="/GiHwan/list.jsp"> 추천게시판 </a></td>
 				<td> 마이페이지 </td>
 		</table>
 	</div>

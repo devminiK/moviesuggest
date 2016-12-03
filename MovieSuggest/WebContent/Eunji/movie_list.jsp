@@ -27,6 +27,8 @@
 </head>
 <body>
 
+<%@ include file="header.html"  %>
+
 
 <ul>
 	<li>
