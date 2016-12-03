@@ -7,6 +7,8 @@
 <title>Detail</title>
 </head>
 <body>
+
+<%@ include file="/Eunji/header.jsp" %>
 <div align=center>
 <H1>회원 정보</H1>
 <HR>

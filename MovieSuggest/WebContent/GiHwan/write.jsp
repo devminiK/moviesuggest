@@ -45,7 +45,7 @@ function writeCheck(){
 </head>
 <body>
 
-<%@ include file="/Eunji/header.html" %>
+<%@ include file="/Eunji/header.jsp" %>
 	<table>
 	  <form name=writeform method=post action="write_ok.jsp">	
       <tr>

@@ -33,7 +33,7 @@
 <body>
 
 
-<%@ include file="header.html" %>
+<%@ include file="header.jsp" %>
 	
 <div id="wrap">
     	<div id="main_bn">

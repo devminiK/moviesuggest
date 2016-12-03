@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<%@ include file="header.html" %>
+<%@ include file="header.jsp" %>
 <div align="center">
 <h3> 회원가입 </h3>
 

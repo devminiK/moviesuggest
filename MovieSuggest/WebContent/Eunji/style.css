@@ -14,12 +14,7 @@ p {
 	font-size : 14px;
 }
 
-#login {
-	display : block;
-	position : absolute;
-	right : 30px;
-	top : 0;
-}
+
 
 #wrap{
 	position:relative; 

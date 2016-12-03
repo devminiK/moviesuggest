@@ -7,6 +7,9 @@
 <title>내가 쓴글</title>
 </head>
 <body>
+
+<%@ include file="/Eunji/header.jsp" %>
+
 <div  align=center>
 <H1>내가 쓴글</H1>
 <HR>

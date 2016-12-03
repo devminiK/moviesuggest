@@ -7,6 +7,9 @@
 <title>mypage</title>
 </head>
 <body>
+
+<%@ include file="/Eunji/header.jsp" %>
+
 <div align=center>
 <h1>MY PAGE</h1>
 <HR>

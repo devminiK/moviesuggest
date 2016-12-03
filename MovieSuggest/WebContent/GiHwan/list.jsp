@@ -24,7 +24,7 @@
  </head>
  <body>
  
- <%@ include file="/Eunji/header.html" %>
+ <%@ include file="/Eunji/header.jsp" %>
  
  <%
 	Class.forName("com.mysql.jdbc.Driver");
