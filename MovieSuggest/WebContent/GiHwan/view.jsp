@@ -57,7 +57,7 @@
       <td width="0">&nbsp;</td>
       <td align="center" width="76">제목</td>
       <td width="319"></td>
-      <td width="0">&nbsp;</td>
+      <td width="0">&nbsp; </td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="4" width="407"></td></tr>
                 <tr>
