@@ -5,15 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>게시판 글쓰기</title>
-<style type="text/css">/* 스타일 시트 */
-
-	body {
-       font-size : 14px; 
-	   font-family:"돋움";
-	}
-	/* ID = write_title (가로 100%, 세로 35px, 세로 높이지정 : 30px, 테두리 둥글게 5px, 테두리굵기 [ 2px 기본 선 색상지정 ] */
-	#write_title{width:100%; height:35px; line-height:30px; border-radius:5px; border:2px solid #009688;}
-</style>
+<link rel="stylesheet" type="text/css" href="style2.css" />
 <script language = "javascript"> // 자바 스크립트 시작
 function writeCheck(){
    var form = document.writeform;
@@ -68,11 +60,11 @@ function writeCheck(){
     	</tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="10"></td></tr>
       </table>
-   <table>
-     <tr>
+   <table id="join">
+     <tr id="join_col">
       <td>&nbsp;</td>
       <td align="center">영화제목</td>
-      <td><input name="title" size="50" maxlength="100"></td>
+      <td><input name="title" size="50" maxlength="100" placeholder="  ex) 럭키,닥터스트레인지" ></td>
       <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>
@@ -95,7 +87,7 @@ function writeCheck(){
      <tr>
        <td>&nbsp;</td>
        <td align="center">내용</td>
-       <td><textarea name="memo" cols="50" rows="13"></textarea></td>
+       <td><textarea name="memo" cols="50" rows="13" placeholder=" ####이곳에 글을 입력해주세요####" ></textarea></td>
        <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>
@@ -104,7 +96,7 @@ function writeCheck(){
        <td>&nbsp;</td>
        <td colspan="3">
          <input type="submit" value="등록" OnClick="javascript:writeCheck();"> 
-         <input type=button value="취소" OnClick="javascript:history.back(-1)">
+         <input type=button value="취소" OnClick="location.href='list.jsp'">
          <input type=reset value="초기화">
        <td>&nbsp;</td>
      </tr>

@@ -4,22 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
- <style type="text/css">/* 스타일 시트 */
-
-	body {
-       font-size : 15px;
-	   font-family:"돋움";
-	}
-	#tables { margin-bottom : 20px; text-align:center;}
-	td {text-align:center;}
-	#write_btn{text-align:right;}
-	#bodys { margin-bottom: 30px}
-	#sel_size {width:300px; height:25px;  padding-left:50%;}
-	/* ID = write_title (가로 100%, 세로 35px, 세로 높이지정 : 30px, 테두리 둥글게 5px, 테두리굵기 [2px 기본 선 색상지정] */
-	#write_title{width:100%; height:30px; margin-top:7px; padding-top:10px; border-radius:5px; border:2px solid #009688;}
-</style>
-
-
+<link rel="stylesheet" type="text/css" href="style2.css" />
  <title>게시판</title>
  </head>
  <body>
@@ -114,7 +99,7 @@
  <tr height="1" bgcolor="#82B5DF"><td colspan="6" width="752"></td></tr>
   <tr>
   <td colspan=5 id=write_btn>
-  <input type="submit" value="글쓰기" ><!--OnClick="window.location='write.jsp'"  --> </td>
+  <input type="submit" value="글쓰기" ></td>
   </tr>
  </table>
  </div><p>
