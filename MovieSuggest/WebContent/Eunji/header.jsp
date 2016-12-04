@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="login" class="moviesuggest.LoginBean" scope="session"/> 
+<jsp:setProperty name="login" property="*" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,10 +20,37 @@
 
 <h2 align="center"> Movie Suggestion </h2>
 	
-	<div id="login">
-		<p><a href="login.html"> login </a></p>
-	</div>
 	
+	<%
+		String url2 = request.getServletPath();
+		String result;
+
+		if(url2.equals("/Eunji/login.jsp")){
+			
+			%>
+			
+			<div id="login">
+			
+			
+			</div>
+			
+			<% 
+			
+			
+		}
+		else{
+			/* if(login.checkUser(request.getParameter("user_id"))){
+				result = login.getResult();
+				
+			} */
+				
+	
+	%>
+	
+	<div id="login">
+		<p><a href="login.jsp"> login </a></p>
+	</div>
+	<% } %>
 	<hr>
 
 </body>

@@ -56,7 +56,19 @@
 		else
 			throw new Exception("DB 삭제 오류");
 	}
+	
+	else if(action.equals("login")){
+		String user_id = request.getParameter("user_id");
+		String user_password = request.getParameter("user_password");
+		
+		session.setAttribute("id",user_id);
+		
+		if(joinbean.checkUser(user_id,user_password) != null){
+			response.sendRedirect("join_control.jsp?action=main");			
+		} 
+	}
 	else {
 		out.println("<script>alert('action 파라미터를 확인해 주세요!!!')</script>");
 	}
+	
 %>
