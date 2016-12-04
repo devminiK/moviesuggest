@@ -14,7 +14,7 @@ public class WriteBean {
 		String jdbc_url = "jdbc:mysql://127.0.0.1:3306/moviesuggest";
 		String user = "root";
 		String password = "root";
-
+			
 		public boolean insertDB(Write write) {
 
 			try {
@@ -22,13 +22,13 @@ public class WriteBean {
 
 				conn = DriverManager.getConnection(jdbc_url, user, password);
 
-				String sql = "insert into write_db(?,?,?) values(?,?,?)";
+				String sql = "insert into write_db(write_title,write_ganre,write_reson) values(?,?,?)";
 
 				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(2, write.getWrite_title());
-				pstmt.setString(4, write.getWrite_ganre());
-				pstmt.setString(6, write.getWrite_reson());
-
+				pstmt.setString(1, write.getWrite_title());
+				pstmt.setString(2, write.getWrite_ganre());
+				pstmt.setString(3, write.getWrite_reson());
+				
 				if (write.getWrite_title() != null) {
 					pstmt.executeUpdate();
 				}
