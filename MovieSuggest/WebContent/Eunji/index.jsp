@@ -32,7 +32,6 @@
 
 <body>
 
-
 <%@ include file="header.jsp" %>
 	
 <div id="wrap">

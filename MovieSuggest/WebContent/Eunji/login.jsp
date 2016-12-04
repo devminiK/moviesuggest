@@ -42,7 +42,7 @@
 	<button type="reset" style="background:#fdfdfd"> 취소 </button>
 	
 	<div style="padding-top : 20px;">
-	<a href="join.html"> 회원가입 </a>
+	<a href="join.jsp"> 회원가입 </a>
 	</div>
 </form>
 </div>

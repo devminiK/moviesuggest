@@ -138,7 +138,7 @@ public class JoinBean {
 			// sql에다가 pstmt 연결.
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(2, join2.getUser_id());
+			pstmt.setString(2, join.getUser_id());
 
 			ResultSet rs = pstmt.executeQuery(); // 반환값을 가져옴. select ~를 받아서 처리하여
 													// 반환해줌. ResultSet으로 받아야 제대로
@@ -210,7 +210,7 @@ public class JoinBean {
 		return datas;
 	}
 
-	public Join checkUser(String user_id, String user_password) {
+	public String checkUser(String user_id, String user_password) {
 		connect();
 
 		String temp;
@@ -219,7 +219,6 @@ public class JoinBean {
 		try {
 
 			pstmt = conn.prepareStatement("select * from join_db where user_id=?");
-			Join login = new Join();
 
 			pstmt.setString(1, user_id);
 
@@ -230,12 +229,11 @@ public class JoinBean {
 				if (user_id.equals(temp)) {
 					temp = rs.getString(3);
 					if (temp.equals(user_password)) {
-						return login;
+						return "success";
 					} else
-						return null;
+						return "password";
 				}
 			}
-
 			pstmt.close();
 			rs.close();
 		} catch (Exception e) {
@@ -246,5 +244,4 @@ public class JoinBean {
 		}
 		return null;
 	}
-
 }

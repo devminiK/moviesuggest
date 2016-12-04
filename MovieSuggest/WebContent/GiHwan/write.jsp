@@ -43,7 +43,9 @@ function writeCheck(){
 }
  </script>
 </head>
-<body >
+<body>
+
+<% if(session.getAttribute("user_id")!=null){ %>
 
 <%@ include file="/Eunji/header.jsp" %>
 	<table align="center"> 
@@ -87,7 +89,7 @@ function writeCheck(){
      <tr>
        <td>&nbsp;</td>
        <td align="center"> 사용자 이름 </td>
-       <td><font color="#757575" style="bold"> HongGi.</font></td>
+       <td><font color="#757575" style="bold"> <% out.println(user_id); %></font></td>
        <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>
@@ -113,5 +115,10 @@ function writeCheck(){
   </tr>
   </form>
  </table>
+ 
+ <% } else {
+	 	out.println("<script>alert('로그인을 해주세요.');history.go(-1);</script>");
+ }
+	 %>
 </body>
 </html>

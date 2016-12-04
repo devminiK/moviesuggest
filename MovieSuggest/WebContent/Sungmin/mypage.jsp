@@ -19,7 +19,7 @@
 <br>
 <Table border=0>
 	<tr>
-	<td><a href="mypage_detail.jsp"><img src="../img/mypage_info.png" width="250" height="250" alt="" ></a></td>
+	<td><a href="../Eunji/join_control.jsp?action=list"><img src="../img/mypage_info.png" width="250" height="250" alt="" ></a></td>
 	<td style="visibility:hidden"><img src="" width="100" height="250"/></td>
 	<td><a href="mypage_written.jsp"><img src="../img/mypage_written.png" width="250" height="250" alt="" ></a></td>
 	</tr>

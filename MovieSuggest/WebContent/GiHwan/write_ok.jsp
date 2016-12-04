@@ -20,7 +20,7 @@
 	try {	
 		conn = DriverManager.getConnection(url,id,pass);
 		
-		String sql = "INSERT INTO write_db(write_evaluate,write_title,write_ganre,write_reson) VALUES(?,?,?,?)";
+		String sql = "INSERT INTO write_db(write_evaluate,write_title,write_ganre,write_reson) VALUES(?,?,?,?,?)";
 		pstmt = conn.prepareStatement(sql);
 		
 		pstmt.setInt(1, evaluate);
