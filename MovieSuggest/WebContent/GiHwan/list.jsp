@@ -88,14 +88,14 @@
 <%
 	 	} else {		 // total이 0이 아닌 즉 자료가 1개이상 있다면
 		while(rs.next()) {
-			int idx = rs.getInt(1) + 1;	     	// 1은 첫번째 즉 write_num값을 idx라는 변수에 대입
+			int idx = rs.getInt(1) ;	     	// 1은 첫번째 즉 write_num값을 idx라는 변수에 대입
 			String title = rs.getString(2);		// write_title
 			String user = rs.getString(3);		// write_user
 			
 %>
 	<tr height="25" align="left">
 		<td id="tdpadding" width="40"><%=idx %></td>
-		<td width="320"> <%= title %></td>
+		<td width="320"> <a href="view.jsp?idx=<%=idx%>"/> <%= title %></td>
 		<td width="73"><%= user %></td>
 		<td width="164"><%= day %></td>
 		<td width="60">&nbsp;</td>

@@ -99,7 +99,7 @@ function writeCheck(){
        <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>
-     <tr height="1" bgcolor="#82B5DF"><td colspan="3"></td></tr>
+     <tr height="1" bgcolor="#009688"><td colspan="3"></td></tr>
      <tr align="center">
        <td>&nbsp;</td>
        <td colspan="3">
