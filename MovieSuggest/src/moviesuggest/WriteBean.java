@@ -14,7 +14,7 @@ public class WriteBean {
 		String jdbc_url = "jdbc:mysql://127.0.0.1:3306/moviesuggest";
 		String user = "root";
 		String password = "root";
-
+			
 		public boolean insertDB(Write write) {
 
 			try {

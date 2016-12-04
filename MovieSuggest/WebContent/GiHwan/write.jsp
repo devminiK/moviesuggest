@@ -5,7 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>게시판 글쓰기</title>
-<link rel="stylesheet" type="text/css" href="style2.css" />
+
+<style type="text/css">
+	#list_title{
+	width:100%; 
+	height:35px;
+	line-height:40px; 
+	border-radius:7px; border:2px solid #009688;
+	}
+</style>
 <script language = "javascript"> // 자바 스크립트 시작
 function writeCheck(){
    var form = document.writeform;
@@ -35,16 +43,16 @@ function writeCheck(){
 }
  </script>
 </head>
-<body>
+<body >
 
 <%@ include file="/Eunji/header.jsp" %>
-	<table>
+	<table align="center"> 
 	  <form name=writeform method=post action="write_ok.jsp">	
       <tr>
         <td>
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
        <tr align="center">
-        <td><div id="write_title">글쓰기</div></td>
+        <td><div id="list_title">글쓰기</div></td>
        </tr>
       </table>
       <table>
