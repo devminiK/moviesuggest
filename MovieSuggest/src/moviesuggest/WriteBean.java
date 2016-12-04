@@ -9,6 +9,10 @@ import java.util.ArrayList;
 
 public class WriteBean {
    
+	  public WriteBean(){
+		  
+	  }
+	  //  데이터베이스 연결관련 변수 선언
       Connection conn = null;
       PreparedStatement pstmt = null;
 
@@ -72,7 +76,59 @@ public class WriteBean {
          }
          return true;   
       }
-      
+      //4) 데이터 삭제
+      public boolean deleteDB(Write write) {
+  		connect();
+
+  		String sql = "delete from write_db where write_num=?";
+
+  		try {
+
+  			pstmt = conn.prepareStatement(sql);
+
+  			pstmt.setString(2, write.getWrite_title());
+
+  			if (write.getWrite_title() != null) {
+  				pstmt.executeUpdate();
+  			}
+  		} catch (Exception e) {
+  			System.out.println(e);
+  			return false;
+  		}
+
+  		finally { // 예외가 발생했건, 잘 실행되었건 항상 끝나기 전에 실행되는 것.
+  			disconnect();
+  		}
+  		return true;
+  	}
+
+  	public boolean updateDB(Write write) {
+  		connect();
+
+  		String sql = "update write_db set write_evaluate=?,write_title=?,write_reson=?";
+
+  		try {
+
+  			pstmt = conn.prepareStatement(sql);
+
+  			pstmt.setInt(1, write.getWrite_evaluate());
+  			pstmt.setString(2, write.getWrite_title());
+  			pstmt.setString(3, write.getWrite_reson());
+
+  			if (write.getWrite_title()!= null) {
+  				pstmt.executeUpdate();
+  			}
+  		} catch (Exception e) {
+  			System.out.println(e);
+  			return false;
+  		}
+
+  		finally { // 예외가 발생했건, 잘 실행되었건 항상 끝나기 전에 실행되는 것.
+  			disconnect();
+  		}
+  		return true;
+  	}
+
       //4)데이터 검색
       public Write getDB(String write_ganre){
          
