@@ -5,11 +5,7 @@
 	request.setCharacterEncoding("utf-8");
 %>
 
-<jsp:useBean id="writebean" class="moviesuggest.WriteBean" />
-<jsp:useBean id="write" class="moviesuggest.Write" />
-<jsp:setProperty name="write" property="*" />
-
-<jsp:useBean id="datas" class="java.util.ArrayList" scope="request" />
+<jsp:useBean id="datas" scope="request" class="java.util.ArrayList" />
 
 <html>
 <head>
@@ -36,24 +32,28 @@ div {
 </head>
 <body>
 
-	<%@ include file="header.jsp"%>
+	<%-- <%@ include file="header.jsp"%> --%>
 
 	<%!
-	ArrayList<String> movie;
-	String[] movie_title = null;
+	ArrayList<String> movie_title = new ArrayList<String>();
+	
 	int i = 0;
-	int count[] = { 0 }, rank[] = { 0 };%>
+	int count[] = {0,0,0,0,0,0,0,0,0,0}, rank[] = {0,0,0,0,0,0,0,0,0,0};
+	%>
 
 	<%
 		for (Write wr : (ArrayList<Write>) datas) {
-			movie_title[i] = wr.getWrite_title();
+			
+			movie_title.add(wr.getWrite_title());
+			out.println(movie_title.get(i));
 			i++;
+			
 		}
 
-		for (int j = 0; j <= i; j++) {
-			for (int n = 0; j <= i; n++) {
-				if (movie_title[n].equals(movie_title[j]))
-					count[j]++;
+		for (int j = 0; j < i; j++) {
+			for (int n = 0; n < i; n++) {
+				if ((movie_title.get(n)).equals(movie_title.get(j)))
+					count[j]+=1;
 			}
 			rank[j] = count[j];
 		}
@@ -67,42 +67,33 @@ div {
 					rank[j] = tmep;
 				}
 
-				out.println(rank[n]);
-			}
-		}
+				
+			}out.println(rank[n]);
+		} 
 	%>
-
-	<%-- <%
-
-int i=0, j=0;
-
-for(i=0; i<2; i++){
 	
-	out.println("<ul>");
+
+	 <ul>
+	 
+	 <%
 	
-	for(j=0; j<4; j++){
-		out.println("<li>");
-		
-		if(i==1){
-			j+=5;
-		}else i+=1;
-		
-		out.println("No."+i);
-	}
-}
-
-%> --%>
-
-	<ul>
+	for(i=0; rank[i] != 0; i++){
+	
+	%>
+	 
 		<li>
 			<div style="height: 400px; float: left; width: 25%;">
-				<p>No.1</p>
+				<p>No.<%=i+1 %></p>
 				<img id="list_img" src="../img/picture1.jpg" />
-				<p>제목제목</p>
+				<p><%=movie_title.get(rank[0]) %></p>
 
 			</div>
 		</li>
-		<li>
+		
+		<%
+		}
+		%>
+		<!-- <li>
 			<div style="height: 400px; float: left; width: 25%;">
 				<p>No.2</p>
 				<img id="list_img" src="../img/picture1.jpg" />
@@ -153,7 +144,7 @@ for(i=0; i<2; i++){
 				<p>제목제목</p>
 
 			</div>
-		</li>
+		</li> -->
 	</ul>
 </body>
 </html>

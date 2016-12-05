@@ -60,7 +60,7 @@
 	<div align="center">
 		<table style="width:850px;">
 			<tr>
-				<td><a href="movie_list.jsp"> 한눈에보기 </a></td>
+				<td><a href="movie_list_control.jsp?action=list"> 한눈에보기 </a></td>
 				<td><a href="../GiHwan/list.jsp"> 추천게시판 </a></td>
 				<td><a href="../Sungmin/mypage.jsp"> 마이페이지 </a></td>
 		</table>
