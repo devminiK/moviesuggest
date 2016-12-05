@@ -15,18 +15,19 @@
 	String ganre = request.getParameter("ganre"); //write.jsp에서 title에 입력한 데이터값  , 영화장르
 	String memo = request.getParameter("memo"); //write.jsp에서 memo에 입력한 데이터값 , 내용
 	int evaluate = Integer.parseInt(request.getParameter("write_evaluate")); 	//평점을 받는다..
-	
+	String user = (String) session.getAttribute("user_id");	
 	
 	try {	
 		conn = DriverManager.getConnection(url,id,pass);
 		
-		String sql = "INSERT INTO write_db(write_evaluate,write_title,write_ganre,write_reson) VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO write_db(write_evaluate,write_title,write_user,write_ganre,write_reson) VALUES(?,?,?,?,?)";
 		pstmt = conn.prepareStatement(sql);
 		
 		pstmt.setInt(1, evaluate);
 		pstmt.setString(2, title);
-		pstmt.setString(3, ganre);
-		pstmt.setString(4, memo);
+		pstmt.setString(3, user);
+		pstmt.setString(4, ganre);
+		pstmt.setString(5, memo);
 		//stmt.setString(5, year);
 		
 		pstmt.executeUpdate();
