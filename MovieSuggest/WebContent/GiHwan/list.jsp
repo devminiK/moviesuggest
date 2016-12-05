@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ page import="java.sql.*,java.text.*,java.util.Date" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
@@ -72,10 +73,10 @@
 	 </tr>
 <%
 	 	} else {		 // total이 0이 아닌 즉 자료가 1개이상 있다면
+	 		String user = (String) session.getAttribute("user_id");
 		while(rs.next()) {
 			int idx = rs.getInt(1) ;	     	// 1은 첫번째 즉 write_num값을 idx라는 변수에 대입
 			String title = rs.getString(2);		// write_title
-			String user = rs.getString(3);		// write_user
 			int hit = rs.getInt(8);				// write_hit
 			
 %>

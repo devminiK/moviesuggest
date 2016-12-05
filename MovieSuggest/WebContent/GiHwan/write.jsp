@@ -89,7 +89,7 @@ function writeCheck(){
      <tr>
        <td>&nbsp;</td>
        <td align="center"> 사용자 이름 </td>
-       <td><font color="#757575" style="bold"> <% out.println(user_id); %></font></td>
+       <td><font color="#757575" style="bold"> <% out.println(" "+user_id); %></font></td>
        <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>
