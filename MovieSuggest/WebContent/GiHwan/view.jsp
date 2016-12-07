@@ -20,10 +20,10 @@
 		
 		String sql = "SELECT * FROM write_db WHERE write_num=" + idx;
 		ResultSet rs = stmt.executeQuery(sql);
-		 if(rs.next()){
+		String user = (String) session.getAttribute("user_id");
+		if(rs.next()){
 				int num = rs.getInt(1);
 				String title = rs.getString(2);
-				String user = rs.getString(3);
 				int evaluate = rs.getInt(5);
 				String reson = rs.getString(6);
 				//Stringdate = rs.getString(7);
@@ -113,9 +113,9 @@
       <td width="0">&nbsp;</td>
       <td colspan="2" width="399">
       <input type=button value="글쓰기" OnClick="window.location='write.jsp'">
-	<input type=button value="목록" OnClick="window.location='list.jsp'">
-	<input type=button value="수정">
-	<input type=button value="삭제">
+	<input type=button value="목록보러가기" OnClick="window.location='list.jsp'">
+	<input type=button value="수정하기" OnClick="window.location='update.jsp?idx=<%=idx%>'">
+	<input type=button value="삭제하기" OnClick="window.location='delete.jsp?'">
       <td width="0">&nbsp;</td>
      </tr>
     </table>

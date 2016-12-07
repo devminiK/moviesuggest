@@ -133,24 +133,27 @@ public class WriteBean {
 	public Write getDB(String write_ganre) {
 
 		connect();
-
 		String sql = "select * from write_db where write_ganre=?";
 		Write write = new Write();
 
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, write_ganre);
-
+				
 			ResultSet rs = pstmt.executeQuery();// 검색한 것을 반환해준다.
 
 			// resultset 받아온다음 해당 레코드를 가리키게됨. 데이터의 유무 여부를 알게해줌
 			rs.next();
 
 			// addrbook에 가져온 값을 저장
-			write.setWrite_title(rs.getString("write_title"));
-			write.setWrite_ganre(rs.getString("write_ganre"));
-			write.setWrite_reson(rs.getString("write_reson"));
-
+			write.setWrite_title(rs.getString(2));
+			write.setWrite_user(rs.getString(3));
+			write.setWrite_ganre(rs.getString(4));
+			write.setWrite_evaluate(rs.getInt(5));
+			write.setWrite_reson(rs.getString(6));
+			write.setWrite_date(rs.getString(7));
+			write.setWrite_hit(rs.getInt(8));
+			
 			rs.close();
 
 		} catch (SQLException e) {

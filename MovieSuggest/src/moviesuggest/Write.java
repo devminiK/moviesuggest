@@ -4,9 +4,17 @@ import java.sql.Date;
 
 public class Write {								///글쓰기에 대한 접근파일///
 	
-	private int write_evaluate , write_num;	  //영화 평점 , 글쓴 숫자.
+	private int write_evaluate , write_num , write_hit;	  //영화 평점 , 글쓴 숫자.
 	private String write_title , write_ganre , write_reson , write_date , write_user;
-				// 영화 제목 ,	영화장르	,	영화 내용	, 작성 날짜    , 영화 글쓴이
+	// 영화 제목 ,	영화장르	,	영화 내용	, 작성 날짜    , 영화 글쓴이
+
+	
+	public int getWrite_hit() {
+		return write_hit;
+	}
+	public void setWrite_hit(int write_hit) {
+		this.write_hit = write_hit;
+	}
 	
 	public int getWrite_evaluate() {
 		return write_evaluate;

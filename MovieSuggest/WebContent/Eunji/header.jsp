@@ -21,7 +21,6 @@
 	<h2 align="center">Movie Suggestion</h2>
 
 	<%!%>
-
 	<%
 		String url2 = request.getServletPath();
 		String result;
