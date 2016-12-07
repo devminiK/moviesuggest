@@ -17,7 +17,7 @@ public class JoinBean {
 
 	// 데이터베이스 연결관련 정보를 문자열으로 선언
 	String jdbc_driver = "com.mysql.jdbc.Driver";
-	String jdbc_url = "jdbc:mysql://127.0.0.1:3306/moviesuggest";
+	String jdbc_url = "jdbc:mysql://127.0.0.1:3306/moviesuggest?autoReconnect=true&useSSL=false";
 	String user = "root";
 	String password = "root";
 
