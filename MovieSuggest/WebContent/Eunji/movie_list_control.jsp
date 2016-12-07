@@ -16,4 +16,10 @@
 		pageContext.forward("movie_list.jsp");
 	}
 	
+	else if(action.equals("written")) {
+		ArrayList<Write> datas = writebean.getDBList();
+		request.setAttribute("datas", datas);
+		pageContext.forward("../Sungmin/mypage_written.jsp");
+	}
+	
 %>

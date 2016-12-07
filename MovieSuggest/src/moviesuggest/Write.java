@@ -1,7 +1,5 @@
 package moviesuggest;
 
-import java.sql.Date;
-
 public class Write {								///글쓰기에 대한 접근파일///
 	
 	private int write_evaluate , write_num , write_hit;	  //영화 평점 , 글쓴 숫자.

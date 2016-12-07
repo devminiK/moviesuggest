@@ -1,5 +1,12 @@
 @CHARSET "UTF-8";
 
+
+a, a:hover, a:visited { 
+	text-decoration:none;
+	color : #000;
+}
+
+
 body {
        font-size : 15px;
 	   font-family:"돋움";

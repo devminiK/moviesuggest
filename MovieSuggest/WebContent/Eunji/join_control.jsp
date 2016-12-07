@@ -35,7 +35,10 @@
 	
 	else if(action.equals("update")) {
 			if(joinbean.updateDB(join)) {
-				response.sendRedirect("join_control.jsp?action=main");
+				String user_id = request.getParameter("user_id");
+				session.setAttribute("user_id",user_id);
+				
+				response.sendRedirect("../Sungmin/mypage_detail.jsp");
 			}
 			else
 				throw new Exception("DB 갱신오류");

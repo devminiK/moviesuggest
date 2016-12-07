@@ -13,6 +13,14 @@
 	line-height:40px; 
 	border-radius:7px; border:2px solid #009688;
 	}
+	
+	
+
+a, a:hover, a:visited { 
+	text-decoration:none;
+	color : #000;
+}
+
 </style>
 <script language = "javascript"> // 자바 스크립트 시작
 function writeCheck(){

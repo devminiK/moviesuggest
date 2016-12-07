@@ -15,11 +15,18 @@
 	right: 30px;
 	top: 0;
 }
+
+
+a, a:hover, a:visited { 
+	text-decoration:none;
+	color : #000;
+}
+
 </style>
 </head>
 <body style="margin-top: 50px; height: 100px;">
 
-	<h2 align="center">Movie Suggestion</h2>
+	
 
 	<%!%>
 	<%
@@ -28,11 +35,22 @@
 		String user_id = (String) session.getAttribute("user_id");
 		String url3 = request.getContextPath();
 
+		%>
+		
+		
+		<h2 align="center">
+		<% if(url3.equals("/Eunji")) { %>
+		<a href="index.jsp" >
+		<% } else {%>
+		<a href="../Eunji/index.jsp" > <% } %>
+			Movie Suggestion</a></h2>
+		
+		<%
 		if (url2.equals("/Eunji/login.jsp")) {
 
 		} else {
 	%>
-
+	
 	<div id="login">
 
 		<%

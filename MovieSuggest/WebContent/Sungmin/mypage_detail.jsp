@@ -9,6 +9,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>MovieSuggest</title>
+
+<style type="text/css">
+
+input {
+	height : 23px;
+}
+
+</style>
 </head>
 <body>
 	<%@ include file="/Eunji/header.jsp"%>
@@ -23,37 +31,39 @@
 			String user_id2 = (String) session.getAttribute("user_id");
 			String cmp_user = null;
 
+			
 			for (Join join : (ArrayList<Join>) datas) {
 				cmp_user = join.getUser_id();
+				out.println(cmp_user);
 				if (user_id2.equals(cmp_user)) {
 		%>
 
-		<form action="mypage.jsp" method="post">
+		<form action="../Eunji/join_control.jsp?action=update" method="post">
 			<table border=1 align=center width=500 height=400>
 				<tr>
-					<th colspan="4">
+					<th colspan="3">
 						<h3>User Information</h3>
 					</th>
 				</tr>
 				<tr>
 					<th class="var" colspon=1>Name</th>
-					<td colspon=3><%=join.getUser_name() %></td>
+					<td><input value=<%=join.getUser_name()%> size="35" name="user_name" type="text" /></td>
 				</tr>
 				<tr>
 					<th class="var">ID</th>
-					<td><%=join.getUser_id() %></td>
+					<td><input value=<%=join.getUser_id() %> size="35" name="user_id" type="hidden" /><%=join.getUser_id() %></td>
 				</tr>
 				<tr>
 					<th class="var">PASS</th>
-					<td><%=join.getUser_password() %></td>
+					<td><input value=<%=join.getUser_password() %> size="35" name="user_password" type="password" /></td>
 				</tr>
 				<tr>
 					<th class="var">E-Mail</th>
-					<td><%=join.getUser_email() %></td>
+					<td><input value=<%=join.getUser_email() %> size="35" name="user_email" type="email" /></td>
 				</tr>
 				<tr>
 					<th class="var">Tel</th>
-					<td><%=join.getUser_tel() %></td>
+					<td><input value=<%=join.getUser_tel() %> size="35" name="user_tel" type="tel" /></td>
 				</tr>
 
 			</table>

@@ -1,56 +1,71 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8" import="java.sql.*" import="java.util.*" import="moviesuggest.*"%>
-
-<jsp:setProperty name="writeB" property="*" />
-
+   pageEncoding="UTF-8" import="java.util.*"
+   import="java.sql.*, moviesuggest.*"%>
+<!--수정중-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<jsp:useBean id="datas" scope="request" class="java.util.ArrayList" />
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>내가 쓴글</title>
 </head>
-<jsp:useBean id="datas" scope="request" class="java.util.ArrayList" />
 <body>
-   <%
-      //<%@ include file="/Eunji/header.jsp"
-   %>
    <div align=center>
       <H1>내가 쓴글</H1>
       <HR>
+      <form name="form1" method="POST" action="../Sungmin/mypage_written.jsp">
+         <select name=movietype>
+            <option>호 러</option>
+            <option>스릴러</option>
+            <option>로맨스</option>
+            <option>액 션</option>
+         </select> 
+         <input type="submit" value="확인" />
+      </form>
+   </div>
+   
+   <%
+      ArrayList<Write> user = new ArrayList<Write>();
+      Write user2 = new Write();
+      String user_id = (String) session.getAttribute("user_id");//문제없음(확인)
+      String user_ganre = request.getParameter("movietype");
 
-      <select name=movietype id=ganre>
-         <option selected>전체</option>
-         <option>호러</option>
-         <option>스릴러</option>
-         <option>로맨스</option>
-         <option>액션</option>
-         <option>코메디</option>
-      </select> <input type="submit" value="확인" /><br>
-      <br>
+      String write_user = null;
+      String write_ganre = null;
+      int Wnum = 1;
 
-<%
-            for(Write  wl : (ArrayList<Write>)datas) {
-               int i=1;
-               
-         %>
-         
-      <%=i %> 번째 글<br>
-      <table border=1 width="100%" height=300>
+      for (Write info : (ArrayList<Write>) datas) {
+         write_user = info.getWrite_user();
+         //write_ganre = info.getWrite_ganre();
+
+         if (user_id.equals(write_user)) {
+           // if (user_ganre.equals(write_ganre)) {
+   %>
+
+   No.<%= Wnum %>
+   <table border=1 width=100% height=200>
       <tr>
-         <td height=20>제목 :<%=wl.getWrite_title() %><%=wl.getWrite_ganre() %>
+         <td height=15%>제목 : <%=info.getWrite_title()%>(<%=info.getWrite_ganre()%>)
          </td>
       </tr>
       <tr>
-         <td><%=wl.getWrite_reson() %></td>
+         <td><%=info.getWrite_reson()%></td>
       </tr>
-      <%
-          i++;
+   </table>
+   <br>
+
+
+   <%
+      Wnum++;
             }
-          %>
-      </table>
-      
-      <button type="button" onclick="location.href='mypage.jsp'">이전페이지로</button>
+         //}
+      }
+   %>
+   <div align=center>
+      <button type="button" onclick="location.href='../Sungmin/mypage.jsp'">이전으로</button>
+      <button type="button" onclick="location.href='../Eunji/index.jsp'">홈으로</button>
    </div>
 </body>
-
 </html>

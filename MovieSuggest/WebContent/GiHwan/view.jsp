@@ -17,7 +17,7 @@
 		Statement stmt = conn.createStatement();
 		
 		String sql = "SELECT * FROM write_db WHERE write_num=" + idx;
-		out.println(idx);
+		//ut.println(idx);
 		ResultSet rs = stmt.executeQuery(sql);
 		String user = (String) session.getAttribute("user_id");
 		if(rs.next()){

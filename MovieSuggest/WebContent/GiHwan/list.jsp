@@ -6,6 +6,14 @@
 <html>
  <head>
 <link rel="stylesheet" type="text/css" href="style2.css" />
+<style type="text/css">
+
+a, a:hover, a:visited { 
+	text-decoration:none;
+	color : #000;
+}
+
+</style>
  <title>게시판</title>
  </head>
  <body>

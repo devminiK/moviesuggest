@@ -34,17 +34,19 @@ div {
 
 	<%@ include file="header.jsp"%>
 
-	<%!ArrayList<String> movie_title = new ArrayList<String>();
+	<%!
+	ArrayList<String> movie_title = new ArrayList<String>();
 	String cmp2 = null;
 	
 	boolean same = false;
 	int i = 0, co = 0, num = 0;
-	int count[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, rank[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-			cmp[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };%>
+	int count[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,0 }, rank[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0,0,0,0,0,0,0,0,0,0,0},
+			cmp[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+			%>
 
 	<%
+		
 		for (Write wr : (ArrayList<Write>) datas) {
-
 			movie_title.add(wr.getWrite_title());
 			//out.println(movie_title.get(i));
 			i++;
@@ -52,9 +54,8 @@ div {
 		}
 
 		co = i - 1;
-
+		
 		for (int j = 0; j <= co; j++) {
-			count[j] =0;
 			for (int n = 0; n <= co; n++) {
 				if ((movie_title.get(n)).equals(movie_title.get(j)))
 					count[j] += 1;

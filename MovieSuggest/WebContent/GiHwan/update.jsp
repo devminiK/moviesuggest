@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.sql.*, java.util.*, java.text.*"%>
 
 <script language = "javascript">  // 자바 스크립트 시작
@@ -37,6 +37,12 @@ function updateCheck(){
 	   font-family:"돋움";width:100%; 
 	   height:35px; line-height:40px;
 	    border-radius:7px; border:2px solid #009688;}
+	    
+a, a:hover, a:visited { 
+	text-decoration:none;
+	color : #000;
+}
+
 </style>
  </head>
  <body>
