@@ -81,8 +81,7 @@ function writeCheck(){
      <tr>
        <td>&nbsp;</td>
        <td align="center">장르</td>
-       <td> <% String a=request.getParameter("movietype");
-       			out.print(a);%></td>
+       <td> <% out.print(request.getParameter("movietype"));%></td>
        <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>
@@ -93,7 +92,6 @@ function writeCheck(){
        <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="3"></td></tr>
-     
      <tr>
        <td>&nbsp;</td>
        <td align="center">내용</td>

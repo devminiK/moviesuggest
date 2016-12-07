@@ -181,10 +181,16 @@ public class WriteBean {
 
 			while (rs.next()) {// 값이 있으면 true로 반환
 				Write write = new Write();
-
+				
+				write.setWrite_num(rs.getInt(1));
 				write.setWrite_title(rs.getString(2));
+				write.setWrite_user(rs.getString(3));
 				write.setWrite_ganre(rs.getString(4));
+				write.setWrite_evaluate(rs.getInt(5));
 				write.setWrite_reson(rs.getString(6));
+				write.setWrite_date(rs.getString(7));
+				write.setWrite_hit(rs.getInt(8));
+				
 
 				datas.add(write);
 

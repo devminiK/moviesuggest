@@ -12,7 +12,7 @@
 	String pass = "root";
 
 	String title = request.getParameter("title"); //write.jsp에서 name에 입력한 데이터값   , 영화제목
-	String ganre = request.getParameter("ganre"); //write.jsp에서 title에 입력한 데이터값  , 영화장르
+	String ganre = request.getParameter("movietype"); //write.jsp에서 title에 입력한 데이터값  , 영화장르
 	String memo = request.getParameter("memo"); //write.jsp에서 memo에 입력한 데이터값 , 내용
 	int evaluate = Integer.parseInt(request.getParameter("write_evaluate")); 	//평점을 받는다..
 	String user = (String) session.getAttribute("user_id");	
@@ -28,14 +28,13 @@
 		pstmt.setString(3, user);
 		pstmt.setString(4, ganre);
 		pstmt.setString(5, memo);
-		//stmt.setString(5, year);
 		
 		pstmt.executeUpdate();
 		pstmt.close();
 		
 		conn.close();
 } catch(SQLException e) {
-	out.println( e.toString() );
+	out.println(e.toString());
 } 
 %>
 <script language=javascript>

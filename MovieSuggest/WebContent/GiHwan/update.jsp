@@ -1,21 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR" import="java.sql.*, java.util.*, java.text.*"%>
+    pageEncoding="UTF-8" import="java.sql.*, java.util.*, java.text.*"%>
 
-<script language = "javascript">  // ÀÚ¹Ù ½ºÅ©¸³Æ® ½ÃÀÛ
+<script language = "javascript">  // ìë°” ìŠ¤í¬ë¦½íŠ¸ ì‹œì‘
 
 function updateCheck(){
    var form = document.updateform;
    
   if( !form.title.value )
    {
-    alert( "Á¦¸ñÀ» Àû¾îÁÖ¼¼¿ä" );
+    alert( "ì œëª©ì„ ì ì–´ì£¼ì„¸ìš”" );
     form.title.focus();
     return;
    }
  
   if( !form.memo.value )
    {
-    alert( "³»¿ëÀ» Àû¾îÁÖ¼¼¿ä" );
+    alert( "ë‚´ìš©ì„ ì ì–´ì£¼ì„¸ìš”" );
     form.memo.focus();
     return;
    }  
@@ -25,16 +25,16 @@ function updateCheck(){
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
- <title>°Ô½ÃÆÇ</title>
- <style type="text/css">/* ½ºÅ¸ÀÏ ½ÃÆ® */
+ <title>ê²Œì‹œíŒ</title>
+ <style type="text/css">/* ìŠ¤íƒ€ì¼ ì‹œíŠ¸ */
 
 	body {
        font-size : 10px; 
-	   font-family:"µ¸¿ò";
+	   font-family:"ë‹ì›€";
 	}
-	/* ID = view_title (°¡·Î 100%, ¼¼·Î 35px, ¼¼·Î ³ôÀÌÁöÁ¤ : 30px, Å×µÎ¸® µÕ±Û°Ô 5px, Å×µÎ¸®±½±â [ 2px ±âº» ¼± »ö»óÁöÁ¤ ] */
+	/* ID = view_title (ê°€ë¡œ 100%, ì„¸ë¡œ 35px, ì„¸ë¡œ ë†’ì´ì§€ì • : 30px, í…Œë‘ë¦¬ ë‘¥ê¸€ê²Œ 5px, í…Œë‘ë¦¬êµµê¸° [ 2px ê¸°ë³¸ ì„  ìƒ‰ìƒì§€ì • ] */
 	#update_title{font-size : 14px; 
-	   font-family:"µ¸¿ò";width:100%; 
+	   font-family:"ë‹ì›€";width:100%; 
 	   height:35px; line-height:40px;
 	    border-radius:7px; border:2px solid #009688;}
 </style>
@@ -46,6 +46,7 @@ function updateCheck(){
 	String id = "root";
 	String pass = "root";
 	int idx = Integer.parseInt(request.getParameter("idx"));
+	out.println(idx);
 	String user_id = (String) session.getAttribute("user_id");
 	try {
 		
@@ -56,7 +57,6 @@ function updateCheck(){
 		ResultSet rs = stmt.executeQuery(sql);
 		
 		 if(rs.next()){
-				int num = rs.getInt(1);
 				String title = rs.getString(2);
 				String user = rs.getString(3);
 				int evaluate = rs.getInt(5);
@@ -64,24 +64,24 @@ function updateCheck(){
 				
 %>
 <table width="80%" align="center">
-<form name=updateform method=post action="update_ok.jsp?idx=<%=idx%>">
+<form name=updateform method=post action="update_ok.jsp">
   <tr>
    <td>
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
      <tr align="center">
-      <td><div id="update_title">¼ö    Á¤</div></td>
+      <td><div id="update_title">ìˆ˜    ì •</div></td>
      </tr>
     </table>
    <table>
      <tr>
       <td>&nbsp;</td>
-      <td align="center" width="76">Á¦  ¸ñ</td>
+      <td align="center" width="76">ì œ  ëª©</td>
       <td><input name="title" size="50" maxlength="50" value="<%=title%>"></td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
     <tr>
       <td>&nbsp;</td>
-      <td align="center" width="76">ÀÌ   ¸§</td>
+      <td align="center" width="76">ì´   ë¦„</td>
 	  <td width="319"> <% out.println(" "+user_id); %></td>
     </tr>
       <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
@@ -91,7 +91,7 @@ function updateCheck(){
       <tr>&nbsp;</tr>
       <tr>
        <td>&nbsp;&nbsp;&nbsp;</td>
-       <td align="center">ÆòÁ¡ </td>
+       <td align="center">í‰ì  </td>
        <td><input type="radio" name="evaluate" value="1"/>1</td>
        <td><input type="radio" name="evaluate" value="2"/>2</td>
        <td><input type="radio" name="evaluate" value="3"/>3</td>
@@ -103,7 +103,7 @@ function updateCheck(){
      <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
      <tr>
       <td>&nbsp;</td>
-      <td>³»  ¿ë</td>
+      <td>ë‚´  ìš©</td>
       <td>
       <textarea name="memo" cols="50" rows="13"><%=reson%></textarea></td>
       <td>&nbsp;</td>
@@ -122,8 +122,8 @@ function updateCheck(){
      <tr align="center">
       <td>&nbsp;</td>
       <td colspan="2">
-      <input type=submit value="¼öÁ¤">
-      <input type=button value="Ãë¼Ò" OnClick="window.location='list.jsp'">
+      <input type=submit value="ìˆ˜ì •">
+      <input type=button value="ì·¨ì†Œ" OnClick="window.location='list.jsp'">
       <td>&nbsp;</td>
      </tr>
     </table>

@@ -31,20 +31,16 @@
 		}
 		rs.close();
 		out.print("총 게시물 : " + total + "개");
-
-		String sqlList = "SELECT * from write_db";
-		rs = stmt.executeQuery(sqlList);    // DB실행
-
 %>
 <form action = "write.jsp">
  <table align = "center">
  	<tr>
    	  <td>
-   	  <select id="sel_size" name = "movietype">
-   	  	<option selected> 호  러 </option>
-   	  	<option >  스릴러  </option>
-   	  	<option>  로맨스  </option>
-   	  	<option>  액 션  </option>
+   	  <select id="sel_size" name="movietype">
+   	  	<option selected value="horror"> 호   러 </option>
+   	  	<option value="thriller">  스릴러  </option>
+   	  	<option value="romance">  로맨스  </option>
+   	  	<option value="action">  액 션  </option>
    	  </select>
    	  </td>
     </tr>
@@ -63,7 +59,9 @@
 </table>
 <table width="100%" cellpadding="0" cellspacing="0" border="0" id= bodys>
 <%
-	Date d = new Date();				
+	String sqlList = "SELECT * from write_db";
+	rs = stmt.executeQuery(sqlList);    // DB실행
+	Date d = new Date();		
 	SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy-MM-dd"); 
 	String day = (String)simpleDate.format(d);
 	if(total==0) {		// total 즉, 자료가 없다면
@@ -78,7 +76,6 @@
 			int idx = rs.getInt(1) ;	     	// 1은 첫번째 즉 write_num값을 idx라는 변수에 대입
 			String title = rs.getString(2);		// write_title
 			int hit = rs.getInt(8);				// write_hit
-			
 %>
 	<tr height="25" align="left">
 		<td id="tdpadding" width="40"><%=idx %></td>
