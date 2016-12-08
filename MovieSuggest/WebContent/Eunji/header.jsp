@@ -44,14 +44,27 @@ a, a:hover, a:visited {
 		<% } else {%>
 		<a href="../Eunji/index.jsp" > <% } %>
 			Movie Suggestion</a></h2>
-		
+		<div id="login">
 		<%
 		if (url2.equals("/Eunji/login.jsp")) {
 
-		} else {
+		}
+		
+		else if(url2.equals("/Sungmin/mypage.jsp") || url2.equals("/Sungmin/mypage_detail.jsp")){
+			%>
+			
+			<p>
+			<%=user_id%>
+			님 &nbsp <a href="../Eunji/join_control.jsp?action=delete&user_id=<%=user_id%>"> 탈퇴하기 </a>
+		</p>
+			
+			<%
+		}
+		
+		else {
 	%>
 	
-	<div id="login">
+	
 
 		<%
 			if (user_id != null) {

@@ -19,7 +19,7 @@ input {
 </style>
 </head>
 <body>
-	<%@ include file="/Eunji/header.jsp"%>
+<%-- 	<%@ include file="/Eunji/header.jsp"%> --%>
 
 
 
@@ -28,17 +28,28 @@ input {
 		<HR>
 
 		<%
+			//ArrayList<String> user = new ArrayList<String>();
 			String user_id2 = (String) session.getAttribute("user_id");
-			String cmp_user = null;
+			boolean same = false;
 
 			
 			for (Join join : (ArrayList<Join>) datas) {
+				out.println(join.getUser_id());
+				String cmp_user = null;
+				same = false;
+				
+				//user.add(join.getUser_id());
 				cmp_user = join.getUser_id();
-				out.println(cmp_user);
-				if (user_id2.equals(cmp_user)) {
+				//out.println(user_id2);
+				//out.println(join.getUser_id());
+				if(cmp_user.equals(user_id2)){
+					same = true;
+				} 
+				
+				if (same) {
 		%>
 
-		<form action="../Eunji/join_control.jsp?action=update" method="post">
+		<form action="../Eunji/join_control.jsp?action=update" method="post" name="form2">
 			<table border=1 align=center width=500 height=400>
 				<tr>
 					<th colspan="3">

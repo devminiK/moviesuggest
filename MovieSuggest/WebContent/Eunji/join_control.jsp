@@ -9,6 +9,7 @@
 
 <% 
 	String action = request.getParameter("action");
+	String user_id2 = request.getParameter("user_id");
 
 	if(action.equals("main")) {
 		pageContext.forward("index.jsp");
@@ -38,16 +39,19 @@
 				String user_id = request.getParameter("user_id");
 				session.setAttribute("user_id",user_id);
 				
-				response.sendRedirect("../Sungmin/mypage_detail.jsp");
+				out.println("<script>history.go(-1);</script>");
+				//response.sendRedirect("../Sungmin/mypage_detail.jsp");
 			}
 			else
 				throw new Exception("DB 갱신오류");
 	}
 	
 	else if(action.equals("delete")) {
-		if(joinbean.deleteDB(join)) {
+		out.println(user_id2);
+		if(joinbean.deleteDB(user_id2)) {
 			response.sendRedirect("join_control.jsp?action=main");
-		}
+			session.invalidate();
+		} 
 		else
 			throw new Exception("DB 삭제 오류");
 	}

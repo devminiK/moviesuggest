@@ -73,7 +73,7 @@ public class JoinBean {
 		return true;
 	}
 
-	public boolean deleteDB(Join join) {
+	public boolean deleteDB(String user_id) {
 		connect();
 
 		String sql = "delete from join_db where user_id=?";
@@ -82,11 +82,10 @@ public class JoinBean {
 
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(2, join.getUser_name());
+			pstmt.setString(1, user_id);
 
-			if (join.getUser_id() != null) {
-				pstmt.executeUpdate();
-			}
+			pstmt.executeUpdate();
+
 		} catch (Exception e) {
 			System.out.println(e);
 			return false;
@@ -101,21 +100,20 @@ public class JoinBean {
 	public boolean updateDB(Join join) {
 		connect();
 
-		String sql = "update join_db set user_name=?, user_id=?, user_password=?, user_email=?, user_tel=?";
+		String sql = "update join_db set user_name=?, user_password=?, user_email=?, user_tel=? where user_id=?";
 
 		try {
 
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, join.getUser_name());
-			pstmt.setString(2, join.getUser_id());
-			pstmt.setString(3, join.getUser_password());
-			pstmt.setString(4, join.getUser_email());
-			pstmt.setString(5, join.getUser_tel());
-
-			if (join.getUser_id() != null) {
+			pstmt.setString(2, join.getUser_password());
+			pstmt.setString(3, join.getUser_email());
+			pstmt.setString(4, join.getUser_tel());
+			pstmt.setString(5, join.getUser_id());
+			
 				pstmt.executeUpdate();
-			}
+			
 		} catch (Exception e) {
 			System.out.println(e);
 			return false;
